@@ -1,216 +1,246 @@
-# Claude Code Skills Collection
+<div align="center">
 
-> A curated personal archive of Claude Code skills and plugins actively used to augment AI-assisted development workflows.
+# ✦ Claude Code Skills Collection ✦
 
----
-
-## Overview
-
-This repository is a snapshot of all Claude Code **skills** and **plugins** installed and used in my development environment. It serves as:
-
-- A **backup** of the skill configurations under `~/.claude/skills/` and `~/.claude/plugins/marketplaces/`
-- A **reference catalog** for onboarding or restoring the same environment on a new machine
-- A **changelog** for tracking which skills are added, updated, or removed over time
-
-Skills in Claude Code are instruction sets (stored as Markdown) that guide Claude's behavior for specific tasks — from animation engineering to systematic debugging to lazy-first development philosophy.
+**A curated personal archive of Claude Code skills & plugins**  
+*actively powering AI-assisted development workflows*
 
 ---
 
-## Repository Structure
+![Skills](https://img.shields.io/badge/Skills-51-6366f1?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyem0tMiAxNWwtNS01IDEuNDEtMS40MUwxMCAxNC4xN2w3LjU5LTcuNTlMMTkgOGwtOSA5eiIvPjwvc3ZnPg==)
+![Plugins](https://img.shields.io/badge/Plugins-4-ec4899?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-Windows%2011-0078D4?style=for-the-badge&logo=windows11)
+![Claude](https://img.shields.io/badge/Claude%20Code-Sonnet%204.6-D97706?style=for-the-badge)
+![Last Sync](https://img.shields.io/badge/Last%20Sync-2026--06--24-22c55e?style=for-the-badge)
+
+</div>
+
+---
+
+## 📖 What Is This?
+
+This repository is a **personal snapshot** of every Claude Code skill and plugin installed in my development environment. Think of it as a dotfiles repo — but for AI cognition.
+
+Claude Code **skills** are Markdown instruction sets that guide Claude's behavior for specific tasks. Instead of repeating yourself every session, skills encode your workflow preferences, patterns, and constraints once — and activate on demand via `/skill-name`.
+
+This repo exists to:
+
+- 💾 **Back up** all skill configs from `~/.claude/skills/` and `~/.claude/plugins/marketplaces/`
+- 📋 **Document** what each skill does and where it came from
+- 🔄 **Restore** the same environment on any new machine in minutes
+- 📈 **Track** skills added, updated, or retired over time
+
+---
+
+## 🗂️ Repository Structure
 
 ```
 skills-that-i-used/
-├── skills/                  # All installed skill directories
-│   ├── ponytail/            # Lazy-first development philosophy
-│   ├── hyperframes/         # HTML video composition engine
-│   ├── systematic-debugging/
-│   └── ... (51 skills total)
-├── plugins/                 # Installed marketplace plugins
-│   ├── claude-plugins-official/
-│   ├── DietrichGebert-ponytail/
-│   ├── hope1026-roblox-mcp/
-│   └── skills-directory-skill-codex/
+│
+├── 📁 skills/                        # 51 installed skill directories
+│   ├── ponytail/                     # Lazy-first development philosophy
+│   ├── hyperframes/                  # HTML video composition engine
+│   ├── systematic-debugging/         # Disciplined bug investigation
+│   ├── frontend-ui-engineering/      # Production-quality UI building
+│   └── ... (47 more)
+│
+├── 📁 plugins/                       # 4 marketplace plugin sources
+│   ├── claude-plugins-official/      # Anthropic's official skill catalog
+│   ├── DietrichGebert-ponytail/      # Lazy-first philosophy plugin
+│   ├── hope1026-roblox-mcp/          # Roblox Studio MCP server
+│   └── skills-directory-skill-codex/ # OpenAI Codex CLI integration
+│
 └── README.md
 ```
 
 ---
 
-## Skills Catalog
+## 🎨 Skills Catalog
 
-### Animation & Creative Engineering
+### 🎬 Animation & Creative Engineering
 
-Skills for building deterministic, seek-driven animations inside [HyperFrames](https://hyperframes.dev) and the browser.
+> Skills for deterministic, seek-driven animations in [HyperFrames](https://hyperframes.dev) and the browser.
 
-| Skill | Description | Source |
-|-------|-------------|--------|
-| `animejs` | Anime.js adapter patterns — registering animations on `window.__hfAnime`, seek-driven timelines, deterministic rendering | `claude-plugins-official` |
-| `gsap` | GSAP `to()`, `from()`, `fromTo()`, easing, stagger, timelines, `quickTo`, `will-change` performance patterns | `claude-plugins-official` |
-| `css-animations` | CSS keyframes, `animation-delay` timing, `animation-fill-mode`, `animation-play-state` — HyperFrames-compatible | `claude-plugins-official` |
-| `waapi` | Web Animations API — `element.animate()`, `Animation.currentTime` seeking, `KeyframeEffect`, native browser animations | `claude-plugins-official` |
-| `lottie` | Lottie / dotLottie adapter — `lottie-web` JSON, `.lottie` files, `@lottiefiles/dotlottie-web`, After Effects exports | `claude-plugins-official` |
-| `three` | Three.js / WebGL — deterministic scenes, `AnimationMixer`, camera motion, shader visuals, `hf-seek` events | `claude-plugins-official` |
-| `typegpu` | TypeGPU / raw WebGPU — WGSL shaders, compute pipelines, liquid glass, particle systems, GPU canvas layers | `claude-plugins-official` |
-
----
-
-### HyperFrames Video Production
-
-Skills covering the full HyperFrames video composition workflow.
-
-| Skill | Description | Source |
-|-------|-------------|--------|
-| `hyperframes` | Core composition authoring — title cards, overlays, captions, voiceovers, audio-reactive visuals, scene transitions | `claude-plugins-official` |
-| `hyperframes-cli` | Dev-loop CLI — `npx hyperframes init/lint/inspect/preview/render/doctor` | `claude-plugins-official` |
-| `hyperframes-media` | Asset preprocessing — TTS (Kokoro), transcription (Whisper), background removal (u2net) | `claude-plugins-official` |
-| `hyperframes-registry` | Install and wire registry blocks/components — `hyperframes add`, `hyperframes.json`, block wiring | `claude-plugins-official` |
-| `contribute-catalog` | Author and ship new HyperFrames registry blocks or components as upstream PRs | `claude-plugins-official` |
-| `remotion-to-hyperframes` | Port Remotion (React) video compositions to HyperFrames HTML | `claude-plugins-official` |
-| `website-to-hyperframes` | Convert websites into HyperFrames compositions | `claude-plugins-official` |
-| `tailwind` | Tailwind CSS v4.2 browser-runtime patterns inside HyperFrames — theme tokens, v3→v4 migration | `claude-plugins-official` |
-
----
-
-### Code Quality & Engineering Practices
-
-| Skill | Description | Source |
-|-------|-------------|--------|
-| `code-review-and-quality` | Multi-axis code review across correctness, design, and maintainability axes | `claude-plugins-official` |
-| `code-simplification` | Refactor for clarity without behavior change — reduce accidental complexity | `claude-plugins-official` |
-| `debugging-and-error-recovery` | Systematic root-cause debugging for test failures, build breaks, unexpected errors | `claude-plugins-official` |
-| `systematic-debugging` | Disciplined debug loop: reproduce → minimise → hypothesise → instrument → fix → regression-test | `claude-plugins-official` |
-| `diagnose` | Hard-bug diagnosis — structured investigation for regressions and performance issues | `claude-plugins-official` |
-| `security-and-hardening` | Harden code against OWASP vulnerabilities — input validation, auth, session management | `claude-plugins-official` |
-| `performance-optimization` | Core Web Vitals, profiling, load-time improvements, bottleneck analysis | `claude-plugins-official` |
-| `tdd` | Test-Driven Development — write tests before implementation code | `claude-plugins-official` |
-| `test-driven-development` | Drive all logic changes with tests that prove behavior | `claude-plugins-official` |
-
----
-
-### Frontend & UI Engineering
-
-| Skill | Description | Source |
-|-------|-------------|--------|
-| `frontend-ui-engineering` | Production-quality UIs — components, layouts, state, accessible and polished interfaces | `claude-plugins-official` |
-| `impeccable` | UI design critique, visual hierarchy, UX review, typography, color, motion, micro-interactions | `claude-plugins-official` |
-| `clone-website` | Reverse-engineer and clone any website — parallel section extraction, asset scraping, pixel-perfect rebuild | `claude-plugins-official` |
-
----
-
-### Planning & Specification
-
-| Skill | Description | Source |
-|-------|-------------|--------|
-| `spec-driven-development` | Create specs before writing code — requirements, acceptance criteria, implementation details | `claude-plugins-official` |
-| `planning-and-task-breakdown` | Break large work into ordered implementable tasks, estimate scope, identify parallelism | `claude-plugins-official` |
-| `incremental-implementation` | Deliver changes incrementally — one file at a time, regular commits, prevents large diffs | `claude-plugins-official` |
-| `writing-plans` | Structured plan documents for multi-step tasks before touching code | `claude-plugins-official` |
-
----
-
-### Ponytail — Lazy-First Development
-
-A philosophy plugin enforcing YAGNI, stdlib-first, minimum-viable-code thinking.
-
-> **Source:** [`DietrichGebert/ponytail`](https://github.com/DietrichGebert/ponytail) — third-party Claude Code plugin
-
-| Skill | Description |
+| Skill | What It Does |
 |-------|-------------|
-| `ponytail` | Core mode — laziest solution that works; questions if the task needs to exist at all |
-| `ponytail-audit` | Whole-repo audit for over-engineering; ranked list of what to delete or simplify |
+| `animejs` | Anime.js adapter — `window.__hfAnime` registration, seek-driven timelines, deterministic rendering |
+| `gsap` | GSAP `to()` / `from()` / `fromTo()`, easing, stagger, timelines, `quickTo`, performance patterns |
+| `css-animations` | CSS keyframes, `animation-delay` timing, `fill-mode`, `play-state` — HyperFrames-compatible |
+| `waapi` | Web Animations API — `element.animate()`, `currentTime` seeking, `KeyframeEffect`, native browser |
+| `lottie` | Lottie / dotLottie — `lottie-web` JSON, `.lottie` files, After Effects exports, deterministic playback |
+| `three` | Three.js / WebGL — deterministic scenes, `AnimationMixer`, camera motion, shader visuals |
+| `typegpu` | TypeGPU / raw WebGPU — WGSL shaders, compute pipelines, liquid glass, particle systems |
+
+---
+
+### 🎥 HyperFrames Video Production
+
+> Full workflow coverage for HTML-based video composition.
+
+| Skill | What It Does |
+|-------|-------------|
+| `hyperframes` | Core authoring — title cards, overlays, captions, voiceovers, audio-reactive visuals, transitions |
+| `hyperframes-cli` | Dev loop — `npx hyperframes init / lint / inspect / preview / render / doctor` |
+| `hyperframes-media` | Asset preprocessing — TTS (Kokoro), transcription (Whisper), background removal (u2net) |
+| `hyperframes-registry` | Install & wire registry blocks/components — `hyperframes add`, `hyperframes.json` wiring |
+| `contribute-catalog` | Author new HyperFrames registry blocks or components and ship as upstream PRs |
+| `remotion-to-hyperframes` | Port Remotion (React) video compositions into HyperFrames HTML |
+| `website-to-hyperframes` | Convert any website into a HyperFrames composition |
+| `tailwind` | Tailwind CSS v4.2 browser-runtime patterns, theme tokens, v3 → v4 migration guide |
+
+---
+
+### 🔍 Code Quality & Engineering Practices
+
+| Skill | What It Does |
+|-------|-------------|
+| `code-review-and-quality` | Multi-axis review across correctness, design, and maintainability |
+| `code-simplification` | Refactor for clarity without behavior change — kill accidental complexity |
+| `debugging-and-error-recovery` | Systematic root-cause debugging for failures, breaks, and surprises |
+| `systematic-debugging` | Full loop: reproduce → minimise → hypothesise → instrument → fix → regression-test |
+| `diagnose` | Hard-bug investigation — structured tracing for regressions and perf issues |
+| `security-and-hardening` | Harden against OWASP top 10 — input validation, auth, sessions, integrations |
+| `performance-optimization` | Core Web Vitals, profiling, load-time improvements, bottleneck analysis |
+| `tdd` | Test-Driven Development — write tests before writing implementation |
+| `test-driven-development` | Drive all logic changes with tests that prove behavior, not just coverage |
+
+---
+
+### 🖥️ Frontend & UI Engineering
+
+| Skill | What It Does |
+|-------|-------------|
+| `frontend-ui-engineering` | Production-quality UI — components, layouts, state, accessible and polished interfaces |
+| `impeccable` | Design critique — visual hierarchy, UX review, typography, color, motion, micro-interactions |
+| `clone-website` | Reverse-engineer and clone any website — parallel section extraction, pixel-perfect rebuild |
+
+---
+
+### 🗺️ Planning & Specification
+
+| Skill | What It Does |
+|-------|-------------|
+| `spec-driven-development` | Specs before code — requirements, acceptance criteria, implementation details |
+| `planning-and-task-breakdown` | Break large work into ordered tasks, estimate scope, identify parallelism |
+| `incremental-implementation` | Deliver incrementally — one file at a time, regular commits, no giant diffs |
+| `writing-plans` | Structured plan documents for multi-step tasks before touching any code |
+
+---
+
+### 🦥 Ponytail — Lazy-First Development
+
+<div align="center">
+
+*"The best code is the code never written."*
+
+</div>
+
+> **Source:** [`DietrichGebert/ponytail`](https://github.com/DietrichGebert/ponytail) — third-party Claude Code plugin  
+> A philosophy plugin enforcing **YAGNI**, stdlib-first, minimum-viable-code thinking across every response.
+
+| Skill | What It Does |
+|-------|-------------|
+| `ponytail` | Core mode — enforces the laziest solution that actually works; questions if the task needs to exist |
+| `ponytail-audit` | Whole-repo audit — ranked list of everything to delete, simplify, or replace with stdlib |
 | `ponytail-review` | Diff-focused review hunting only for complexity to remove |
-| `ponytail-debt` | Harvest all `ponytail:` comments into a debt ledger |
-| `ponytail-gain` | Scoreboard showing token/code savings from ponytail mode |
-| `ponytail-help` | Quick-reference card for all ponytail modes and commands |
+| `ponytail-debt` | Harvest all `ponytail:` comments into a tracked debt ledger |
+| `ponytail-gain` | Scoreboard showing measured token/code savings from ponytail mode |
+| `ponytail-help` | Quick-reference card for all ponytail modes, skills, and commands |
 
 ---
 
-### Workflow & Productivity
+### ⚙️ Workflow & Productivity
 
-| Skill | Description | Source |
-|-------|-------------|--------|
-| `caveman` | Ultra-compressed communication — ~75% token reduction, zero filler, full technical accuracy | `claude-plugins-official` |
-| `handoff` | Compact the current conversation into a handoff document for a fresh agent to continue | `claude-plugins-official` |
-| `grill-me` | Relentless design interview — stress-test a plan by resolving every branch of a decision tree | `claude-plugins-official` |
-| `codex` | Run OpenAI Codex CLI (`codex exec`, `codex resume`) for code analysis and refactoring | [`skills-directory-skill-codex`](https://github.com/klaudworks/ralph-meets-rex) |
+| Skill | What It Does |
+|-------|-------------|
+| `caveman` | Ultra-compressed comms — ~75% token reduction, zero filler, full technical accuracy |
+| `handoff` | Compact the current session into a handoff doc for a fresh agent to continue seamlessly |
+| `grill-me` | Relentless design interview — stress-test any plan by resolving every branch of a decision tree |
+| `codex` | Run OpenAI Codex CLI (`codex exec`, `codex resume`) for code analysis and refactoring |
 
 ---
 
-### Roblox / Game Development
+### 🎮 Roblox / Game Development
 
 > **Source:** [`hope1026/roblox-mcp`](https://github.com/hope1026/roblox-mcp) — WEPPY MCP server for Roblox Studio
 
-| Skill | Description |
+| Skill | What It Does |
 |-------|-------------|
-| `weppy-roblox-mcp-guide` | Control a live Roblox Studio session via MCP — scripts, instances, terrain, lighting, audio, animations |
-| `weppy-roblox-sync-guide` | Bidirectional sync between AI agent and Roblox Studio — conflict resolution, sync format, explorer workflow |
+| `weppy-roblox-mcp-guide` | Control a live Roblox Studio session — scripts, instances, terrain, lighting, audio, animations |
+| `weppy-roblox-sync-guide` | Bidirectional AI ↔ Studio sync — conflict resolution, sync format, explorer workflow |
 
 ---
 
-### Lightweight Custom Skills
+### 🔧 Lightweight Custom Skills
 
-Simple single-file skills for common day-to-day operations:
+> Simple single-file skills for common day-to-day operations.
 
 | Skill | Purpose |
 |-------|---------|
-| `fix` | Quick bug fix — diagnose, isolate, fix with minimal scope |
+| `fix` | Quick bug fix — diagnose, isolate, resolve with minimal scope change |
 | `plan` | Strategic planning and step breakdown before coding |
 | `review` | Code review and quality assessment for PRs |
 | `spec` | Specification and requirements documentation |
 | `test` | Test writing, QA, and validation |
-| `safe` | Conservative, non-breaking, production-safe changes |
+| `safe` | Conservative, non-breaking, production-safe changes only |
 | `simple` | Single-file low-risk tasks — copy edits, icon swaps, minor tweaks |
 | `incremental` | Build large features step-by-step with regular commits |
 | `frontend` | Project-specific frontend component and styling work |
 
 ---
 
-## Plugin Sources
+## 📦 Plugin Sources
 
-| Plugin | Author | Description |
-|--------|--------|-------------|
-| [`claude-plugins-official`](https://github.com/anthropics/claude-code) | Anthropic | Official curated skill catalog for Claude Code |
-| [`DietrichGebert-ponytail`](https://github.com/DietrichGebert/ponytail) | Dietrich Gebert | Lazy-first development philosophy plugin |
-| [`skills-directory-skill-codex`](https://github.com/klaudworks/ralph-meets-rex) | klaudworks | OpenAI Codex CLI integration for Claude Code |
-| [`hope1026-roblox-mcp`](https://github.com/hope1026/roblox-mcp) | hope1026 | MCP server for AI-driven Roblox Studio control |
+| Plugin | Maintainer | Purpose |
+|--------|-----------|---------|
+| [claude-plugins-official](https://github.com/anthropics/claude-code) | Anthropic | Official curated skill catalog for Claude Code |
+| [DietrichGebert-ponytail](https://github.com/DietrichGebert/ponytail) | Dietrich Gebert | Lazy-first development philosophy |
+| [skills-directory-skill-codex](https://github.com/klaudworks/ralph-meets-rex) | klaudworks | OpenAI Codex CLI integration |
+| [hope1026-roblox-mcp](https://github.com/hope1026/roblox-mcp) | hope1026 | AI-driven Roblox Studio control via MCP |
 
 ---
 
-## How to Restore This Environment
+## 🚀 Restore This Environment
 
 ```bash
-# 1. Install Claude Code CLI
+# 1. Install Claude Code
 npm install -g @anthropic-ai/claude-code
 
-# 2. Copy skills into place
-cp -r skills/* ~/.claude/skills/
+# 2. Clone this repo
+git clone https://github.com/Dparamet/skills-that-i-used.git
+cd skills-that-i-used
 
-# 3. Copy plugins into place
+# 3. Restore skills and plugins
+cp -r skills/* ~/.claude/skills/
 cp -r plugins/* ~/.claude/plugins/marketplaces/
 
-# 4. Verify skills are available inside Claude Code
-# Type /fix or /ponytail to confirm
+# 4. Verify inside Claude Code — type /ponytail or /handoff to confirm
 ```
 
 ---
 
-## Maintenance
-
-This repository is updated whenever skills are added, modified, or removed from the local environment. To sync:
+## 🔄 Keeping It in Sync
 
 ```bash
-# From the repo root
+# Sync latest skills from your local environment
 cp -r ~/.claude/skills/* ./skills/
 cp -r ~/.claude/plugins/marketplaces/* ./plugins/
 git add -A
 git commit -m "sync: update skills snapshot $(date +%Y-%m-%d)"
+git push
 ```
 
 ---
 
-## License
+## 📄 License
 
-Each skill and plugin retains the license of its original author. See individual `plugins/<name>/` directories for licensing details.
+Each skill and plugin retains the license of its original author.  
+See individual `plugins/<name>/` directories for details.
 
 ---
 
-*Last synced: 2026-06-24 | Environment: Windows 11 · Claude Code · claude-sonnet-4-6*
+<div align="center">
+
+*Last synced: **2026-06-24** · Environment: **Windows 11** · **Claude Code** · **claude-sonnet-4-6***
+
+</div>
